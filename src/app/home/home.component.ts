@@ -2,14 +2,13 @@ import { Component, inject } from '@angular/core';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { FilterListComponent } from '../filter-list/filter-list.component';
 import { SkeletonComponent } from '../skeleton/skeleton.component';
-import { COUNTRIES } from '../../data';
+
 import { AsyncPipe, DecimalPipe, SlicePipe } from '@angular/common';
 import { CountryCardsComponent } from '../country-cards/country-cards.component';
 import { Country } from '../model/country';
 import { PaginationComponent } from '../pagination/pagination.component';
 import { ConfigService } from '../services/config.service';
 import { catchError, map, Observable, of, timeout } from 'rxjs';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-home',

@@ -1,7 +1,7 @@
-import { Component, signal } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+
 import { Country } from '../model/country';
 import { ConfigService } from '../services/config.service';
 import {
@@ -11,7 +11,7 @@ import {
   Location,
 } from '@angular/common';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
-import { heroArrowLongLeft } from '@ng-icons/heroicons/outline';
+
 import { heroArrowLongLeftSolid } from '@ng-icons/heroicons/solid';
 import { LoadingSkeletonComponent } from '../loading-skeleton/loading-skeleton.component';
 
@@ -33,7 +33,6 @@ import { LoadingSkeletonComponent } from '../loading-skeleton/loading-skeleton.c
 export class DetailPageComponent {
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private configService: ConfigService,
     private _location: Location
   ) {
@@ -55,12 +54,6 @@ export class DetailPageComponent {
   country!: Country;
 
   ngOnInit() {
-    const count = signal(0);
-    count.set(3);
-    // Increment the count by 1.
-    count.update((value) => value + 1);
-    // Signals are getter functions - calling them reads their value.
-    console.log('The count is: ' + count());
     this.countries$ = this.configService.getAllCountries();
     this.countries$.subscribe((country) => {
       this.countries = country;
@@ -71,8 +64,6 @@ export class DetailPageComponent {
     this.country$.subscribe((country) => {
       this.country = country[0];
     });
-
-    console.log(this.country);
   }
 
   goBack() {
