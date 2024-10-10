@@ -1,0 +1,17 @@
+<div
+  class="w-full flex font-semibold items-center bg-white dark:bg-primary-500 text-zinc-25 dark:text-white shadow-md rounded-md transition-all duration-100"
+>
+  <span
+    class="transition-all duration-100 focus-visible:outline-none flex justify-center items-center rounded-tl-md rounded-bl-md h-14 ps-5 pe-3"
+  >
+    <ng-icon name="matSearchOutline" class="text-2xl"></ng-icon>
+  </span>
+  <input
+    type="search"
+    placeholder="Search for a country by name..."
+    name="searchTerm"
+    [formControl]="searchTerm"
+    (input)="searchCountry()"
+    class="transition-all duration-100 h-14 ps-2 pe-5 w-full text-sm focus-visible:outline-none rounded-tr-md rounded-br-md dark:bg-primary-500 dark:placeholder:text-white"
+  />
+</div>

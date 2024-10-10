@@ -1,0 +1,27 @@
+<div
+  [routerLink]="['/detail/', country.name.common]"
+  class="w-4/5 cursor-pointer group hover:scale-110 sm:w-auto mx-auto sm:mx-0 lg:w-auto rounded-lg shadow-lg bg-white dark:bg-primary-500 transition-all duration-100 hover:duration-200 min-h-[360px] h-full"
+>
+  <div
+    [style]="'background-image: url(' + country.flags.svg + ')'"
+    class="w-full bg-cover group-hover:bg-contain bg-center min-h-[200px] bg-no-repeat bg-white dark:bg-slate-500 rounded-t-lg duration-300"
+  ></div>
+
+  <div class="p-6">
+    <h2 class="font-extrabold text-base lg:text-lg mb-2.5">
+      {{ country.name.common }}
+    </h2>
+    <p class="mb-1">
+      <strong class="font-semibold me-1">Population:</strong>
+      {{ country.population | number : "0.0" }}
+    </p>
+    <p class="mb-1">
+      <strong class="font-semibold me-1">Region:</strong>
+      {{ country.region }}
+    </p>
+    <p class="mb-1">
+      <strong class="font-semibold me-1">Capital:</strong>
+      {{ country.capital?.join(", ") || "None" }}
+    </p>
+  </div>
+</div>

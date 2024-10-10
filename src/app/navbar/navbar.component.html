@@ -1,0 +1,42 @@
+<header
+  id="top"
+  class="shadow-md dark:bg-primary-500 transition-all duration-100"
+>
+  <div
+    class="px-4 py-9 md:px-9 min-[1440px]:px-0 min-[1440px]:py-7 flex flex-wrap justify-between items-center container mx-auto"
+  >
+    <h1>
+      <a
+        routerLink=""
+        class="font-extrabold text-lg lg:text-2xl transition-all duration-100"
+      >
+        Where in the world?
+      </a>
+    </h1>
+
+    <button
+      (click)="toggleDarkMode()"
+      class="focus-visible:outline-none transition-all duration-100"
+    >
+      @if (isDark) {
+      <span class="flex items-center lg:gap-x-3 gap-x-2">
+        <ng-icon
+          name="heroMoonSolid"
+          class="inline text-xl lg:text-2xl mb-0.5 lg:mb-1"
+        ></ng-icon>
+
+        <span class="font-semibold lg:text-lg"> Light Mode </span>
+      </span>
+      }@else {
+      <span class="flex items-center lg:gap-x-3 gap-x-2">
+        <ng-icon
+          name="heroMoon"
+          class="inline text-xl lg:text-2xl mb-0.5 lg:mb-1"
+        ></ng-icon>
+
+        <span class="font-semibold lg:text-lg"> Dark Mode </span>
+      </span>
+      }
+    </button>
+  </div>
+</header>

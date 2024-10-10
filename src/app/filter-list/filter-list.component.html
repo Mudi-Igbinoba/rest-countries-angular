@@ -1,0 +1,12 @@
+<select
+  name="selectedRegion"
+  [formControl]="selectedRegion"
+  class="appearance-none bg-[length:15px] bg-no-repeat bg-[90%_center] font-semibold w-full h-14 px-5 rounded-md bg-white dark:bg-primary-500 text-primary-700 dark:text-white shadow-md bg-light-arrow dark:bg-dark-arrow"
+  (change)="filterRegion()"
+>
+  <option value="" hidden>Filter by Region</option>
+
+  @for (region of regions; track $index) {
+  <option [value]="region">{{ region | titlecase }}</option>
+  }
+</select>
